@@ -1,0 +1,29 @@
+# Processed by EYE v10.17.3 (2024-08-07)
+# eye --quiet ../n3/pqn_pred.n3 --turtle ../logs/xes/sepsis_pred.ttl --query ../n3/queries/constraints/q18.n3 --nope
+
+@prefix ns2: <http://dutch.hospital.nl/sepsis#>.
+@prefix pq: <http://notation3.org/pqn#>.
+
+ns2:trace_NZ pq:activitiesDirectlyFollow (ns2:Admission_NC ns2:Admission_IC _:sk_0).
+ns2:trace_XBA pq:activitiesDirectlyFollow (ns2:Admission_NC ns2:Admission_IC _:sk_1).
+ns2:trace_UC pq:activitiesDirectlyFollow (ns2:Admission_NC ns2:Admission_IC _:sk_2).
+ns2:trace_AD pq:activitiesDirectlyFollow (ns2:Admission_NC ns2:Admission_IC _:sk_3).
+ns2:trace_XFA pq:activitiesDirectlyFollow (ns2:Admission_NC ns2:Admission_IC _:sk_4).
+ns2:trace_PGA pq:activitiesDirectlyFollow (ns2:Admission_NC ns2:Admission_IC _:sk_5).
+ns2:trace_WKA pq:activitiesDirectlyFollow (ns2:Admission_NC ns2:Admission_IC _:sk_6).
+ns2:trace_S pq:activitiesDirectlyFollow (ns2:Admission_NC ns2:Admission_IC _:sk_7).
+ns2:trace_YF pq:activitiesDirectlyFollow (ns2:Admission_NC ns2:Admission_IC _:sk_8).
+ns2:trace_LG pq:activitiesDirectlyFollow (ns2:Admission_NC ns2:Admission_IC _:sk_9).
+ns2:trace_XI pq:activitiesDirectlyFollow (ns2:Admission_NC ns2:Admission_IC _:sk_10).
+ns2:trace_TN pq:activitiesDirectlyFollow (ns2:Admission_NC ns2:Admission_IC _:sk_11).
+ns2:trace_VN pq:activitiesDirectlyFollow (ns2:Admission_NC ns2:Admission_IC _:sk_12).
+ns2:trace_FO pq:activitiesDirectlyFollow (ns2:Admission_NC ns2:Admission_IC _:sk_13).
+ns2:trace_GO pq:activitiesDirectlyFollow (ns2:Admission_NC ns2:Admission_IC _:sk_14).
+ns2:trace_BP pq:activitiesDirectlyFollow (ns2:Admission_NC ns2:Admission_IC _:sk_15).
+ns2:trace_LT pq:activitiesDirectlyFollow (ns2:Admission_NC ns2:Admission_IC _:sk_16).
+ns2:trace_RU pq:activitiesDirectlyFollow (ns2:Admission_NC ns2:Admission_IC _:sk_17).
+ns2:trace_YX pq:activitiesDirectlyFollow (ns2:Admission_NC ns2:Admission_IC _:sk_18).
+ns2:trace_RY pq:activitiesDirectlyFollow (ns2:Admission_NC ns2:Admission_IC _:sk_19).
+# 2024-08-22T20:56:31.394Z in=125263 out=20 ent=20 step=20 brake=1 inf=4134556 sec=0.428 inf/sec=9660178
+# ENDS
+

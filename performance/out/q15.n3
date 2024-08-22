@@ -1,0 +1,6 @@
+# Processed by EYE v10.17.3 (2024-08-07)
+# eye --quiet ../n3/pqn_pred.n3 --turtle ../logs/xes/sepsis_pred.ttl --query ../n3/queries/constraints/q15.n3 --nope
+
+# 2024-08-22T20:56:29.906Z in=125263 out=0 ent=0 step=0 brake=2 inf=4169698 sec=0.443 inf/sec=9412411
+# ENDS
+
