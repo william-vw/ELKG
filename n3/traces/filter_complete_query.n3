@@ -11,15 +11,15 @@
 
 {
     ?t pq:activityOccursAsEnd ( "Execute Payment" ?e ) .
-    # # - pred
-    # ?e1 tr:in ?t ; tr:next ?e2 .
-    # - reif
-    ?l tr:in ?t ; tr:from ?e1 ; tr:to ?e2 .
+    # - pred
+    ?e1 tr:in ?t ; tr:next ?e2 .
+    # # - reif
+    # ?l tr:in ?t ; tr:from ?e1 ; tr:to ?e2 .
 
 } => {
     ?t a tr:Trace .
-    # # - pred
-    # ?e1 tr:in ?t ; tr:next ?e2 .
-    # - reif
-    ?l tr:in ?t ; tr:from ?e1 ; tr:to ?e2
+    # - pred
+    ?e1 tr:in ?t ; tr:next ?e2 .
+    # # - reif
+    # ?l tr:in ?t ; tr:from ?e1 ; tr:to ?e2
 } .

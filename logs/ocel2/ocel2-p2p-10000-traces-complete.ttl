@@ -1,6 +1,0 @@
-# Processed by EYE v10.17.3 (2024-08-07)
-# eye --quiet n3/pqn_pred.n3 --turtle logs/ocel2/ocel2-p2p-10000.ttl logs/ocel2/ocel2-p2p-10000-traces.ttl --nope --query n3/traces/filter_complete_query.n3
-
-# 2024-08-22T21:15:44.583Z in=237603 out=0 ent=0 step=0 brake=1 inf=29627980 sec=2.006 inf/sec=14769681
-# ENDS
-

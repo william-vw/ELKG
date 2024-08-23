@@ -72,16 +72,16 @@
 
 } => {
     ?trace a tr:Trace .
-    # # - pred
-    # ?evt tr:in ?trace .
-    # ?evt2 tr:in ?trace .
-    # ?evt tr:next ?evt2 .
-    # - reif
-    [ 
-        tr:in ?trace ;
-        tr:from ?evt ;
-        tr:to ?evt2
-    ]
+    # - pred
+    ?evt tr:in ?trace .
+    ?evt2 tr:in ?trace .
+    ?evt tr:next ?evt2 .
+    # # - reif
+    # [ 
+    #     tr:in ?trace ;
+    #     tr:from ?evt ;
+    #     tr:to ?evt2
+    # ]
 } .
 
 

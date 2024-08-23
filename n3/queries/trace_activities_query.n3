@@ -11,7 +11,7 @@
 
 {
     # (fill in trace ID here)  
-    ?t log:equalTo skolem:t_13 .
+    ?t log:equalTo skolem:t_51 .
 
     ?t pq:allEvents ?events .
     
