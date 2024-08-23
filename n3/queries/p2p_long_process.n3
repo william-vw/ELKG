@@ -9,28 +9,22 @@
 @prefix p2: <http://ocel2.org/p2p#> .
 @prefix func: <http://www.w3.org/2007/rif-builtin-function#>.
 
-# - lengthy approval process
-# from https://www.ocel-standard.org/event-logs/simulations/p2p/:
-# Lengthy Approval Process: Delays in approving purchase requisitions or purchase orders, which might lead to operational inefficiencies.
+# - lengthy overall process (over 6 weeks)
 
 {
-    ?t pq:activityOccurs ( "Create Purchase Order" ?c ) .
-    ?t pq:activityOccurs ( "Approve Purchase Order" ?a ) .
+    ?t pq:activityOccurs ( "Create Purchase Requisition" ?pr ) .
+    ?t pq:activityOccurs ( "Execute Payment" ?pa ) .
+    
+    ?pr tr:ts ?pr_ts . ?pa tr:ts ?pa_ts .
 
-    [] tr:event ?c ; tr:object ?o .
-    ?o a p2:purchase_order .
-    [] tr:event ?a ; tr:object ?o .
-
-    ?c tr:ts ?cts . ?a tr:ts ?ats .
-
-    ( ?ats ?cts ) func:subtract-dateTimes ?diff .
+    ( ?pa_ts ?pr_ts ) func:subtract-dateTimes ?diff .
     ( ?diff ) func:days-from-duration ?days ;
         func:hours-from-duration ?hours .
 
     ( ?hours 24 )!math:quotient math:rounded ?hours_days .
     ( ?hours_days ?days ) math:sum ?total_days .
 
-    ?total_days math:greaterThan 14 . # over 2 weeks
+    ?total_days math:greaterThan 42 . # over 6 weeks (42 days)
     ( ?total_days " days" ) string:concatenation ?dur_days .
 
 } => {
