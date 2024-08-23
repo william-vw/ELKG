@@ -11,7 +11,8 @@ __P2P event log__
 `./run.sh -t eye -q ../n3/queries/p2p_mav_buying1.n3 -l ../logs/ocel2/ocel2-p2p-expanded.ttl -n 5 -r results/p2p_queries.csv -p ../n3/pqn.n3`  
 `./run.sh -t eye -q ../n3/queries/p2p_mav_buying2.n3 -l ../logs/ocel2/ocel2-p2p-expanded.ttl -n 5 -r results/p2p_queries.csv -p ../n3/pqn.n3`  
 `./run.sh -t eye -q ../n3/queries/p2p_duplic_paym.n3 -l ../logs/ocel2/ocel2-p2p-expanded.ttl -n 5 -r results/p2p_queries.csv -p ../n3/pqn.n3`  
-`./run.sh -t eye -q ../n3/queries/p2p_long_po_approv.n3 -l ../logs/ocel2/ocel2-p2p-expanded.ttl -n 5 -r results/p2p_queries.csv -p ../n3/pqn.n3`  
+`./run.sh -t eye -q ../n3/queries/p2p_long_approv.n3 -l ../logs/ocel2/ocel2-p2p-expanded.ttl -n 5 -r results/p2p_queries.csv -p ../n3/pqn.n3`  
+`./run.sh -t eye -q ../n3/queries/p2p_long_process.n3 -l ../logs/ocel2/ocel2-p2p-expanded.ttl -n 5 -r results/p2p_queries.csv -p ../n3/pqn.n3`  
 
 ### Run all constraint queries (N3 file)
 `./run_all.sh -t eye -d ../n3/queries/constraints -l ../logs/xes/sepsis.ttl -r results/sepsis_constraints.csv -n 5 -p ../n3/pqn.n3`
