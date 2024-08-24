@@ -11,7 +11,14 @@
 # Maverick Buying: Unauthorized purchases, bypassing the standard procedure.
 
 {
-    ?t pq:activityOccurs ( "Create Purchase Order" ?e ) .
-    ?t pq:activityDoesNotOccur "Approve Purchase Order" .
+    # find traces where:
+
+    # POs are created n1 times
+    ?t pq:activityOccursAtLeastNTimes ( "Create Purchase Order" 1 ?n1 ) .
+    # POs are approved n2 times
+    ?t pq:activityOccursAtLeastNTimes ( "Approve Purchase Order" 0 ?n2 ) .
+
+    # less PO approvals than creations
+    ?n2 math:lessThan ?n1 .
 
 } => { pq:result pq:entry ?t } .

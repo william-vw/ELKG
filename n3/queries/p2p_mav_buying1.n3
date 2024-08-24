@@ -11,7 +11,11 @@
 # Maverick Buying: Unauthorized purchases, bypassing the standard procedure.
 
 {
+    # find traces where:
+    
+    # PR is created
     ?t pq:activityOccurs ( "Create Purchase Requisition" ?e ) .
+    # PR is _not_ approved
     ?t pq:activityDoesNotOccur "Approve Purchase Requisition" .
 
 } => { pq:result pq:entry ?t } .

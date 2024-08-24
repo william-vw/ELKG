@@ -12,20 +12,21 @@
 # - lengthy overall process (over 6 weeks)
 
 {
+    # events ?pr, ?pa respectively involve creating PR and payment
     ?t pq:activityOccurs ( "Create Purchase Requisition" ?pr ) .
     ?t pq:activityOccurs ( "Execute Payment" ?pa ) .
     
+    # get event timestamps
     ?pr tr:ts ?pr_ts . ?pa tr:ts ?pa_ts .
 
+    # get time difference (duration) between timestamps
     ( ?pa_ts ?pr_ts ) func:subtract-dateTimes ?diff .
-    ( ?diff ) func:days-from-duration ?days ;
-        func:hours-from-duration ?hours .
+    
+    # get number of days in duration
+    ?diff pq:durationInDays ?days .
 
-    ( ?hours 24 )!math:quotient math:rounded ?hours_days .
-    ( ?hours_days ?days ) math:sum ?total_days .
-
-    ?total_days math:greaterThan 42 . # over 6 weeks (42 days)
-    ( ?total_days " days" ) string:concatenation ?dur_days .
+    ?days math:greaterThan 42 . # over 6 weeks (42 days)
+    ( ?days " days" ) string:concatenation ?dur_days .
 
 } => {
     pq:result pq:entry ( ?t ?dur_days )

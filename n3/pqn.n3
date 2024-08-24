@@ -1,6 +1,7 @@
 # @alsoload log-bnodes-exp.n3
 
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix func: <http://www.w3.org/2007/rif-builtin-function#>.
 @prefix list: <http://www.w3.org/2000/10/swap/list#> .
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
 @prefix math: <http://www.w3.org/2000/10/swap/math#> .
@@ -767,3 +768,19 @@
 {
    ?t pq:allEventsFrom ( tr:nil ?coll ?coll )
 } <= true .
+
+
+# get total duration from time difference in days
+
+{
+   ?dur pq:durationInDays ?total_days 
+} <= {
+    # get years, months, days, hours from duration
+    ( ?dur ) func:years-from-duration ?years ;
+         func:months-from-duration ?months ;
+         func:days-from-duration ?days .
+   
+   ( ?years 365 ) math:product ?years_days .
+   ( ?months 30 ) math:product ?months_days .
+    ( ?years_days ?months_days ?days ) math:sum ?total_days .
+} .

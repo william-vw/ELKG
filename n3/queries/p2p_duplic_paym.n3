@@ -12,6 +12,7 @@
 # Duplicate Payments: An error leading to the same invoice being paid multiple times.
 
 {
+    # payment occurs at least twice in a trace
     ?t pq:activityOccursAtLeastNTimes ( "Execute Payment" 2 ?n ) .
 
     ( "# payments: " ?n ) string:concatenation ?nr_paym .

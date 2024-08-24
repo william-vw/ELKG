@@ -14,25 +14,26 @@
 # Lengthy Approval Process: Delays in approving purchase requisitions or purchase orders, which might lead to operational inefficiencies.
 
 {
+    # events ?c, ?a respectively involve creating, approving a PO
     ?t pq:activityOccurs ( "Create Purchase Order" ?c ) .
     ?t pq:activityOccurs ( "Approve Purchase Order" ?a ) .
 
-    # about the same purchase order!
-    [] tr:event ?c ; tr:object ?o .
-    ?o a p2:purchase_order .
-    [] tr:event ?a ; tr:object ?o .
+    # both events are about the same PO
+    [] tr:event ?c ; tr:object ?po .
+    ?po a p2:purchase_order .
+    [] tr:event ?a ; tr:object ?po .
 
+    # get event timestamps
     ?c tr:ts ?cts . ?a tr:ts ?ats .
-
+    
+    # get time difference (duration) between timestamps
     ( ?ats ?cts ) func:subtract-dateTimes ?diff .
-    ( ?diff ) func:days-from-duration ?days ;
-        func:hours-from-duration ?hours .
+    
+    # get number of days in duration
+    ?diff pq:durationInDays ?days .
 
-    ( ?hours 24 )!math:quotient math:rounded ?hours_days .
-    ( ?hours_days ?days ) math:sum ?total_days .
-
-    ?total_days math:greaterThan 14 . # over 2 weeks
-    ( ?total_days " days" ) string:concatenation ?dur_days .
+    ?days math:greaterThan 14 . # over 2 weeks
+    ( ?days " days" ) string:concatenation ?dur_days .
 
 } => {
     pq:result pq:entry ( ?t ?dur_days )
