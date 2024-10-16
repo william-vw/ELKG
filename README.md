@@ -1,5 +1,8 @@
 # Event Log Knowledge Graphs (ELKG)
 
+Checkout the paper to accompany the repository:  
+https://arxiv.org/abs/2409.04452
+
 [`elkg-test.ipynb`](elkg-test.ipynb): an introduction on how to convert case and object centric event logs into ELKG, and subsequently query the resulting ELKG.
 
 [`logs`](logs/): the original and RDF versions of the [P2P event log](https://www.ocel-standard.org/event-logs/simulations/p2p/) and [sepsis event log](https://data.4tu.nl/articles/_/12707639/1).
